@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Year Calculator</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="msg">
+        
+        <h1>Dog Year Calculator</h1>
+    
+        <ul>
+            <li>The first two years of a dog’s life count as 10.5 dog years each.</li>
+            <li>Each year following equates to 4 dog years.</li>
+    
+        </ul>
+    
+      <form id="form1" action="#">
+          <label>Your current age
+    
+              <input type="number" id="input_humanyear">
+    
+          </label><br>
+          <label>Your name
+     
+              <input type="text" id="yourname">
+    
+          </label>
+     
+        <input type="button" onclick="convertHumanYearToDogYear()" value="Check">
+      </form>
+    
+      <div id="dog-age"></div>
+    </div>
+
+<script>
+
+function convertHumanYearToDogYear() {
+    const yourname = document.getElementById("yourname").value;
+    let yourage = document.getElementById("input_humanyear").value;
+    let dogAGE = document.getElementById("dog-age");
+    yourage = Number(yourage);
+
+    if (yourage < 3){
+    myAgeInDogYears = 10.5 * yourage;
+   } else {
+    myAgeInDogYears = 21 + (4 * (yourage - 2)); 
+   };
+    anser =`My name is ${yourname}. I am ${myAgeInDogYears} years old in dog years.`;
+    document.getElementById("dog-age").innerHTML = anser;
+}
+</script>
+
+</body>
+</html>
